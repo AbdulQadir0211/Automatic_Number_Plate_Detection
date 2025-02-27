@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Plate Recognition</title>
+</head>
+<body>
+    <h2>Select Detection Mode</h2>
+
+    <!-- Live Webcam Stream -->
+    <h3>Live Webcam Detection</h3>
+    <img src="{{ url_for('video_feed') }}" width="640">
+
+    <!-- Video Upload -->
+    <h3>Upload a Video</h3>
+    <form action="/upload_video" method="POST" enctype="multipart/form-data">
+        <input type="file" name="video" required>
+        <button type="submit">Upload & Detect</button>
+    </form>
+
+    <!-- Detection Log -->
+    <h3>Recent Detections</h3>
+    <table border="1">
+        <tr>
+            <th>Timestamp</th>
+            <th>Plate Number</th>
+        </tr>
+        {% for log in log_entries %}
+        <tr>
+            <td>{{ log[0] }}</td>
+            <td>{{ log[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,8 @@
+flask
+opencv-python
+ultralytics
+easyocr
+numpy
+pandas
+Pillow
+werkzeug

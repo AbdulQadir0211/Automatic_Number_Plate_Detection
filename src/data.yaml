@@ -1,0 +1,6 @@
+train: /path_to_dataset/train/images
+val: /path_to_dataset/valid/images
+test: /path_to_dataset/test/images
+
+nc: 1  # Number of classes (License Plate)
+names: ["license_plate"]
